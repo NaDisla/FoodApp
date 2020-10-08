@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodApp.AddFood"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:Custom="clr-namespace:FoodApp.Customs">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Agregar nuevo alimento"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"
+                   FontSize="Title"
+                   Margin="50" />
+            <Custom:CustomEntry Placeholder="Código"
+                                x:Name="txtIDFood"
+                                IsEnabled="False"
+                                HorizontalOptions="CenterAndExpand"/>
+            <Custom:CustomEntry Placeholder="Nombre"
+                                x:Name="txtNameFood"
+                                HorizontalOptions="CenterAndExpand" 
+                                Margin="0,20,0,0"
+                                TextColor="White"/>
+            <Custom:CustomEntry Placeholder="Categoría"
+                                x:Name="txtCategoryFood"
+                                HorizontalOptions="CenterAndExpand" 
+                                Margin="0,20,0,0"
+                                TextColor="White"/>
+            <Button Text="Registrar alimento"
+                    BackgroundColor="LightGreen"
+                    TextColor="DarkGreen"
+                    CornerRadius="30"
+                    HorizontalOptions="Center"
+                    Padding="20,0,20,0"
+                    x:Name="btnRegistroAlimento"
+                    Clicked="btnRegistroAlimento_Clicked"
+                    Margin="0,70,0,0" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
