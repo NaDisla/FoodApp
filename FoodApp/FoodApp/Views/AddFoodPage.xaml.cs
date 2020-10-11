@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FoodApp.Models;
+using FoodApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -8,49 +10,34 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FoodApp
+namespace FoodApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddFood : ContentPage
+    public partial class AddFoodPage : ContentPage
     {
         ModelFood objFood = new ModelFood();
         Random idRandom = new Random();
+        FoodViewModel viewModelFood = new FoodViewModel();
 
-        public AddFood()
+        public AddFoodPage()
         {
             InitializeComponent();
             IDRandom();
         }
+
         private async void btnRegistroAlimento_Clicked(object sender, EventArgs e)
         {
             objFood.IDFood = int.Parse(txtIDFood.Text);
             objFood.FoodName = txtNameFood.Text;
             objFood.FoodCategory = txtCategoryFood.Text;
 
-            try
+            if (txtNameFood.Text != null && txtCategoryFood.Text != null)
             {
-                MessagingCenter.Send(this, "AddingFood", objFood);
+                viewModelFood.SendFood(this, "AddingFood", objFood);
                 await Navigation.PopModalAsync();
-            }
-            catch (Exception)
-            {
-                await DisplayAlert("Registro incorrecto", "Ocurrió un error durante el registro.", "OK");
-            }
-        }
-        public async Task MostrarMensaje()
-        {
-            var action = await DisplayAlert("Registro satisfactorio", "¿Desea agregar más alimentos?", "SÍ", "NO");
-            if (action)
-            {
-                IDRandom();
-                txtNameFood.Text = null;
-                txtCategoryFood.Text = null;
-                return;
             }
             else
-            {
-                await Navigation.PopModalAsync();
-            }
+                await DisplayAlert("Campos vacíos", "Debe de completar los campos requeridos.", "OK");
         }
         public void IDRandom()
         {

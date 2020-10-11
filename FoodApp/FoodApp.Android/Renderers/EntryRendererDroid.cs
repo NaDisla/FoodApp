@@ -29,7 +29,7 @@ namespace FoodApp.Droid.Renderers
                 var gradientDrawable = new GradientDrawable();
                 gradientDrawable.SetCornerRadius(30f);
                 gradientDrawable.SetColor(Android.Graphics.Color.Rgb(108, 196, 180));
-                gradientDrawable.SetSize(640, 49);
+                gradientDrawable.SetSize(570, 49);
                 Control.SetBackground(gradientDrawable);
 
                 Control.SetPadding(25, Control.PaddingTop, Control.PaddingRight, Control.PaddingBottom);

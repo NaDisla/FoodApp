@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FoodApp
+namespace FoodApp.Models
 {
     public class ModelFood
     {

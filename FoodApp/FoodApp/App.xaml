@@ -3,6 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FoodApp.App">
     <Application.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="#77c7b2" />
+            <Setter Property="FontSize"
+                    Value="15" />
+            <Setter Property="TextColor"
+                    Value="#16473b" />
+            <Setter Property="FontAttributes"
+                    Value="Bold" />
+            <Setter Property="CornerRadius"
+                    Value="30" />
+            <Setter Property="HorizontalOptions"
+                    Value="Center" />
+            <Setter Property="Padding"
+                    Value="20,0,20,0" />
+            <Setter Property="Margin"
+                    Value="0,70,0,0" />
+        </Style>
 
+        <Style TargetType="Label"
+               x:Key="TitlePage">
+            <Setter Property="FontAttributes"
+                    Value="Bold" />
+            <Setter Property="Margin"
+                    Value="0,50,0,0" />
+            <Setter Property="HorizontalTextAlignment"
+                    Value="Center" />
+            <Setter Property="FontSize"
+                    Value="Title" />
+        </Style>
     </Application.Resources>
 </Application>

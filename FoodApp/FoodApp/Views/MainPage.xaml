@@ -1,22 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FoodApp.MainPage"
+             x:Class="FoodApp.Views.MainPage"
              NavigationPage.HasNavigationBar="False">
     <StackLayout>
         <Label Text="Mi lista de alimentos"
-               HorizontalTextAlignment="Center"
-               FontAttributes="Bold"
-               FontSize="Title"
-               Margin="50" />
-        <Button BackgroundColor="DarkCyan"
-                Text="Nueva comida"
-                TextColor="White"
-                CornerRadius="30"
-                HorizontalOptions="CenterAndExpand"
-                Padding="25,0,25,0"
+               Style="{StaticResource TitlePage}" />
+        <Button Text="Nueva comida"
                 x:Name="btnNewFood"
-                Clicked="btnNewFood_Clicked"/>
+                Clicked="btnNewFood_Clicked"
+                Margin="0,20,0,0"/>
         <Label  x:Name="txtListEmpty"
                 FontAttributes="Bold"
                 TextColor="DarkCyan"
@@ -28,14 +21,13 @@
                   SeparatorColor="DarkCyan"
                   RowHeight="80"
                   BackgroundColor="AliceBlue"
-                  x:FieldModifier="public"
                   HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout VerticalOptions="FillAndExpand" Padding="20,10,0,10">
                             <Label Text="{Binding FoodName}" FontAttributes="Bold"/>
-                            <Label Text="{Binding IDFood, StringFormat='Código: {0}'}"/>
+                            <Label Text="{Binding IdFood, StringFormat='Código: {0}'}"/>
                             <Label Text="{Binding FoodCategory, StringFormat='Categoría: {0}'}"/>
                         </StackLayout>
                     </ViewCell>

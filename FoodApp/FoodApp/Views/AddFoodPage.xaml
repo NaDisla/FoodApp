@@ -1,39 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FoodApp.AddFood"
+             x:Class="FoodApp.Views.AddFoodPage"
              NavigationPage.HasNavigationBar="False"
              xmlns:Custom="clr-namespace:FoodApp.Customs">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Agregar nuevo alimento"
-                   HorizontalTextAlignment="Center"
-                   FontAttributes="Bold"
-                   FontSize="Title"
-                   Margin="50" />
-            <Custom:CustomEntry Placeholder="Código"
-                                x:Name="txtIDFood"
+                   Style="{StaticResource TitlePage}" />
+            <Custom:CustomEntry x:Name="txtIDFood"
                                 IsEnabled="False"
-                                HorizontalOptions="CenterAndExpand"/>
+                                HorizontalOptions="CenterAndExpand"
+                                Margin="0,20,0,0"/>
             <Custom:CustomEntry Placeholder="Nombre"
                                 x:Name="txtNameFood"
-                                HorizontalOptions="CenterAndExpand" 
+                                HorizontalOptions="CenterAndExpand"
                                 Margin="0,20,0,0"
+                                PlaceholderColor="White"
                                 TextColor="White"/>
             <Custom:CustomEntry Placeholder="Categoría"
                                 x:Name="txtCategoryFood"
-                                HorizontalOptions="CenterAndExpand" 
+                                HorizontalOptions="CenterAndExpand"
                                 Margin="0,20,0,0"
+                                PlaceholderColor="White"
                                 TextColor="White"/>
             <Button Text="Registrar alimento"
-                    BackgroundColor="LightGreen"
-                    TextColor="DarkGreen"
-                    CornerRadius="30"
-                    HorizontalOptions="Center"
-                    Padding="20,0,20,0"
                     x:Name="btnRegistroAlimento"
-                    Clicked="btnRegistroAlimento_Clicked"
-                    Margin="0,70,0,0" />
+                    Clicked="btnRegistroAlimento_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

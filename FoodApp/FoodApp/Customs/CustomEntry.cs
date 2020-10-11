@@ -7,5 +7,6 @@ namespace FoodApp.Customs
 {
     public class CustomEntry : Entry
     {
+        
     }
 }
